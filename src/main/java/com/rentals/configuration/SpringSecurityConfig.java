@@ -21,7 +21,7 @@ public class SpringSecurityConfig {
 
     @Bean
     public SecurityFilterChain filterChain(HttpSecurity http) throws Exception {
-        return http.authorizeRequests(auth -> {
+        return http.authorizeHttpRequests(auth -> {
             auth.anyRequest().authenticated();
         }).formLogin(Customizer.withDefaults()).build();
     }
